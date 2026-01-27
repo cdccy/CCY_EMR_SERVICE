@@ -1,0 +1,47 @@
+# 开发环境配置
+spring:
+  # 数据源配置 - PostgreSQL
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/emr_db?currentSchema=public
+    username: emr_user
+    password: emr_password
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
+  # Redis 配置
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      timeout: 10000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1ms
+          max-idle: 8
+          min-idle: 0
+
+# MinIO 配置
+minio:
+  endpoint: http://localhost:9000
+  access-key: minioadmin
+  secret-key: minioadmin123
+  bucket-name: emr-files
+
+# JWT 配置
+jwt:
+  secret: CCY_EMR_SERVICE_JWT_SECRET_KEY_2024_MUST_BE_256_BITS_OR_MORE_FOR_HS256
+  expiration: 86400000  # 24小时 (毫秒)
+  header: Authorization
+  prefix: "Bearer "
+
+# APIJSON 配置
+apijson:
+  enabled: true
+  debug: true
