@@ -11,6 +11,7 @@
 | PostgreSQL | 16 | 数据库 |
 | Redis | 7 | 缓存 |
 | MinIO | Latest | 对象存储 |
+| APIJSON | 8.0.2 | 零代码接口 |
 | JWT | 0.12.3 | Token 认证 |
 
 ## 快速开始

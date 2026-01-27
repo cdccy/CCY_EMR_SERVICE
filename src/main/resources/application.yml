@@ -24,6 +24,18 @@ spring:
       max-file-size: 100MB
       max-request-size: 100MB
 
+# MyBatis 配置
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    lazy-loading-enabled: false
+    multiple-result-sets-enabled: true
+    use-column-label: true
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.ccy.emr.modules.**.entity
+
 # 日志配置
 logging:
   level:

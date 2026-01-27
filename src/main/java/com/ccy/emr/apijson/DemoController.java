@@ -1,17 +1,13 @@
 package com.ccy.emr.apijson;
 
+import apijson.RequestMethod;
 import apijson.framework.APIJSONController;
-import apijson.orm.Parser;
-import com.ccy.emr.common.result.Result;
-import com.ccy.emr.common.result.ResultCode;
-import com.ccy.emr.common.util.JwtUtil;
-import jakarta.servlet.http.HttpServletRequest;
+import apijson.framework.APIJSONParser;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
 
 /**
  * APIJSON 通用控制器
@@ -23,15 +19,12 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequestMapping("/apijson") // 前端需要以此开头调用接口，例如 /apijson/get
-public class DemoController extends APIJSONController<Long> {
-
-    @Autowired
-    private JwtUtil jwtUtil;
+public class DemoController extends APIJSONController<Long, JSONObject, JSONArray> {
 
     @Override
-    public Parser<Long> newParser(HttpSession session, RequestMethod method) {
-        Parser<Long> parser = super.newParser(session, method);
-        parser.setNeedVerify(true); // 开启校验
+    public APIJSONParser<Long, JSONObject, JSONArray> newParser(HttpSession session, RequestMethod method) {
+        APIJSONParser<Long, JSONObject, JSONArray> parser = super.newParser(session, method);
+        parser.setNeedVerify(false); // 开启校验
 
         // 此处可以注入当前用户身份给 APIJSON，用于权限判断
         // 从 SecurityContext 或者 Header 获取用户 ID
@@ -50,9 +43,8 @@ public class DemoController extends APIJSONController<Long> {
      * @param session HTTP Session
      * @return 结果 JSON
      */
-    @Override
     @PostMapping("/{method}")
     public String router(@PathVariable("method") String method, @RequestBody String request, HttpSession session) {
-        return super.router(method, request, session);
+        return super.crud(method, request, session);
     }
 }
