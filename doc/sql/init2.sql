@@ -96,6 +96,12 @@ COMMENT ON COLUMN emr_data_element.default_value IS '默认值';
 COMMENT ON COLUMN emr_data_element.enabled IS '是否启用';
 COMMENT ON COLUMN emr_data_element.created_at IS '创建时间';
 COMMENT ON COLUMN emr_data_element.updated_at IS '更新时间';
+-- 添加 element_name 字段到 emr_data_set_element 表
+ALTER TABLE emr_data_set_element
+    ADD COLUMN element_name VARCHAR(128) NOT NULL DEFAULT '';
+
+-- 添加字段注释
+COMMENT ON COLUMN emr_data_set_element.element_name IS '数据元名称（冗余存储，用于展示优化）';
 
 -- 表：emr_data_set（数据集主表）
 CREATE TABLE emr_data_set (
@@ -299,6 +305,108 @@ COMMENT ON COLUMN doctor.update_time IS '更新时间';
 CREATE INDEX idx_doctor_dept_code ON doctor(dept_code);
 CREATE INDEX idx_doctor_user_username ON doctor(user_username);
 
+
+
+
+-- ============================
+-- 电子病历管理系统
+-- ============================
+
+-- 表：emr_template（电子病历模板主表）
+CREATE TABLE emr_template (
+                              id BIGSERIAL PRIMARY KEY,
+                              template_code VARCHAR(64) NOT NULL UNIQUE,
+                              template_name VARCHAR(128) NOT NULL,
+                              emr_type VARCHAR(32) NOT NULL,
+                              template_scope VARCHAR(16) NOT NULL,
+                              template_structure JSONB NOT NULL,
+                              enabled BOOLEAN DEFAULT TRUE,
+                              create_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+                              update_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+COMMENT ON TABLE emr_template IS '电子病历模板主表（定义病历结构）';
+COMMENT ON COLUMN emr_template.id IS '模板主键ID';
+COMMENT ON COLUMN emr_template.template_code IS '病历模板编码（全局唯一）';
+COMMENT ON COLUMN emr_template.template_name IS '病历模板名称';
+COMMENT ON COLUMN emr_template.emr_type IS '病历类型（初诊、复诊、病程记录）';
+COMMENT ON COLUMN emr_template.template_scope IS '模板范围（HOSPITAL 全院 / DEPARTMENT 科室）';
+COMMENT ON COLUMN emr_template.template_structure IS '病历模板结构定义(JSON，包含数据元占位)';
+COMMENT ON COLUMN emr_template.enabled IS '是否启用';
+COMMENT ON COLUMN emr_template.create_time IS '创建时间';
+COMMENT ON COLUMN emr_template.update_time IS '更新时间';
+
+-- 表：emr_template_department（病历模板-科室关联表）
+CREATE TABLE emr_template_department (
+                                         id BIGSERIAL PRIMARY KEY,
+                                         template_id BIGINT NOT NULL,
+                                         dept_id     BIGINT NOT NULL,
+                                         create_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+                                         update_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+                                         CONSTRAINT uq_template_dept UNIQUE (template_id, dept_id),
+                                         CONSTRAINT fk_template_dept_template FOREIGN KEY (template_id) REFERENCES emr_template(id) ON DELETE CASCADE,
+                                         CONSTRAINT fk_template_dept_department FOREIGN KEY (dept_id) REFERENCES sys_department(id)
+);
+
+COMMENT ON TABLE emr_template_department IS '病历模板-科室关联表（适用于科室模板）';
+COMMENT ON COLUMN emr_template_department.id IS '主键ID';
+COMMENT ON COLUMN emr_template_department.template_id IS '病历模板ID';
+COMMENT ON COLUMN emr_template_department.dept_id IS '科室ID';
+COMMENT ON COLUMN emr_template_department.create_time IS '创建时间';
+COMMENT ON COLUMN emr_template_department.update_time IS '更新时间';
+
+-- 表：emr_record（病历实例主表）
+CREATE TABLE emr_record (
+                            id BIGSERIAL PRIMARY KEY,
+                            emr_code VARCHAR(64) NOT NULL UNIQUE,
+                            visit_code VARCHAR(64) NOT NULL,
+                            patient_code VARCHAR(64) NOT NULL,
+                            doctor_code VARCHAR(64) NOT NULL,
+                            template_code VARCHAR(64) NOT NULL,
+                            emr_type VARCHAR(32) NOT NULL,
+                            emr_status VARCHAR(32) DEFAULT 'DRAFT',
+                            current_version INTEGER DEFAULT 1,
+                            create_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+                            update_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+COMMENT ON TABLE emr_record IS '电子病历实例主表（一次就诊可生成多份病历）';
+COMMENT ON COLUMN emr_record.emr_code IS '病历实例编码';
+COMMENT ON COLUMN emr_record.visit_code IS '门诊就诊编码';
+COMMENT ON COLUMN emr_record.patient_code IS '患者编码';
+COMMENT ON COLUMN emr_record.doctor_code IS '医生编码';
+COMMENT ON COLUMN emr_record.template_code IS '病历模板编码';
+COMMENT ON COLUMN emr_record.emr_type IS '病历类型（初诊、复诊）';
+COMMENT ON COLUMN emr_record.emr_status IS '病历状态';
+COMMENT ON COLUMN emr_record.current_version IS '当前病历版本号';
+COMMENT ON COLUMN emr_record.create_time IS '创建时间';
+COMMENT ON COLUMN emr_record.update_time IS '更新时间';
+
+CREATE INDEX idx_emr_record_visit ON emr_record(visit_code);
+CREATE INDEX idx_emr_record_patient ON emr_record(patient_code);
+
+-- 表：emr_record_version（病历版本表）
+CREATE TABLE emr_record_version (
+                                    id BIGSERIAL PRIMARY KEY,
+                                    emr_code VARCHAR(64) NOT NULL,
+                                    version_no INTEGER NOT NULL,
+                                    emr_content JSONB NOT NULL,
+                                    signed_flag BOOLEAN DEFAULT FALSE,
+                                    create_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+                                    update_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+COMMENT ON TABLE emr_record_version IS '电子病历版本表（支持多版本、签署冻结）';
+COMMENT ON COLUMN emr_record_version.emr_code IS '病历实例编码';
+COMMENT ON COLUMN emr_record_version.version_no IS '病历版本号';
+COMMENT ON COLUMN emr_record_version.emr_content IS '病历内容(JSON)，含医嘱/检查快照';
+COMMENT ON COLUMN emr_record_version.signed_flag IS '是否已签署';
+COMMENT ON COLUMN emr_record_version.create_time IS '创建时间';
+COMMENT ON COLUMN emr_record_version.update_time IS '更新时间';
+
+CREATE UNIQUE INDEX uk_emr_version ON emr_record_version(emr_code, version_no);
+CREATE INDEX idx_emr_version_emr ON emr_record_version(emr_code);
+
 -- 表：doctor_favorite_template（医生收藏病历模板关联表）
 CREATE TABLE doctor_favorite_template (
     id              BIGSERIAL PRIMARY KEY,
@@ -319,104 +427,7 @@ COMMENT ON COLUMN doctor_favorite_template.create_time IS '收藏时间';
 CREATE INDEX idx_fav_doctor_code ON doctor_favorite_template(doctor_code);
 CREATE INDEX idx_fav_template_code ON doctor_favorite_template(template_code);
 
--- ============================
--- 电子病历管理系统
--- ============================
 
--- 表：emr_template（电子病历模板主表）
-CREATE TABLE emr_template (
-    id BIGSERIAL PRIMARY KEY,
-    template_code VARCHAR(64) NOT NULL UNIQUE,
-    template_name VARCHAR(128) NOT NULL,
-    emr_type VARCHAR(32) NOT NULL,
-    template_scope VARCHAR(16) NOT NULL,
-    template_structure JSONB NOT NULL,
-    enabled BOOLEAN DEFAULT TRUE,
-    create_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    update_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
-);
-
-COMMENT ON TABLE emr_template IS '电子病历模板主表（定义病历结构）';
-COMMENT ON COLUMN emr_template.id IS '模板主键ID';
-COMMENT ON COLUMN emr_template.template_code IS '病历模板编码（全局唯一）';
-COMMENT ON COLUMN emr_template.template_name IS '病历模板名称';
-COMMENT ON COLUMN emr_template.emr_type IS '病历类型（初诊、复诊、病程记录）';
-COMMENT ON COLUMN emr_template.template_scope IS '模板范围（HOSPITAL 全院 / DEPARTMENT 科室）';
-COMMENT ON COLUMN emr_template.template_structure IS '病历模板结构定义(JSON，包含数据元占位)';
-COMMENT ON COLUMN emr_template.enabled IS '是否启用';
-COMMENT ON COLUMN emr_template.create_time IS '创建时间';
-COMMENT ON COLUMN emr_template.update_time IS '更新时间';
-
--- 表：emr_template_department（病历模板-科室关联表）
-CREATE TABLE emr_template_department (
-    id BIGSERIAL PRIMARY KEY,
-    template_id BIGINT NOT NULL,
-    dept_id     BIGINT NOT NULL,
-    create_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    update_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT uq_template_dept UNIQUE (template_id, dept_id),
-    CONSTRAINT fk_template_dept_template FOREIGN KEY (template_id) REFERENCES emr_template(id) ON DELETE CASCADE,
-    CONSTRAINT fk_template_dept_department FOREIGN KEY (dept_id) REFERENCES sys_department(id)
-);
-
-COMMENT ON TABLE emr_template_department IS '病历模板-科室关联表（适用于科室模板）';
-COMMENT ON COLUMN emr_template_department.id IS '主键ID';
-COMMENT ON COLUMN emr_template_department.template_id IS '病历模板ID';
-COMMENT ON COLUMN emr_template_department.dept_id IS '科室ID';
-COMMENT ON COLUMN emr_template_department.create_time IS '创建时间';
-COMMENT ON COLUMN emr_template_department.update_time IS '更新时间';
-
--- 表：emr_record（病历实例主表）
-CREATE TABLE emr_record (
-    id BIGSERIAL PRIMARY KEY,
-    emr_code VARCHAR(64) NOT NULL UNIQUE,
-    visit_code VARCHAR(64) NOT NULL,
-    patient_code VARCHAR(64) NOT NULL,
-    doctor_code VARCHAR(64) NOT NULL,
-    template_code VARCHAR(64) NOT NULL,
-    emr_type VARCHAR(32) NOT NULL,
-    emr_status VARCHAR(32) DEFAULT 'DRAFT',
-    current_version INTEGER DEFAULT 1,
-    create_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    update_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
-);
-
-COMMENT ON TABLE emr_record IS '电子病历实例主表（一次就诊可生成多份病历）';
-COMMENT ON COLUMN emr_record.emr_code IS '病历实例编码';
-COMMENT ON COLUMN emr_record.visit_code IS '门诊就诊编码';
-COMMENT ON COLUMN emr_record.patient_code IS '患者编码';
-COMMENT ON COLUMN emr_record.doctor_code IS '医生编码';
-COMMENT ON COLUMN emr_record.template_code IS '病历模板编码';
-COMMENT ON COLUMN emr_record.emr_type IS '病历类型（初诊、复诊）';
-COMMENT ON COLUMN emr_record.emr_status IS '病历状态';
-COMMENT ON COLUMN emr_record.current_version IS '当前病历版本号';
-COMMENT ON COLUMN emr_record.create_time IS '创建时间';
-COMMENT ON COLUMN emr_record.update_time IS '更新时间';
-
-CREATE INDEX idx_emr_record_visit ON emr_record(visit_code);
-CREATE INDEX idx_emr_record_patient ON emr_record(patient_code);
-
--- 表：emr_record_version（病历版本表）
-CREATE TABLE emr_record_version (
-    id BIGSERIAL PRIMARY KEY,
-    emr_code VARCHAR(64) NOT NULL,
-    version_no INTEGER NOT NULL,
-    emr_content JSONB NOT NULL,
-    signed_flag BOOLEAN DEFAULT FALSE,
-    create_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    update_time TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
-);
-
-COMMENT ON TABLE emr_record_version IS '电子病历版本表（支持多版本、签署冻结）';
-COMMENT ON COLUMN emr_record_version.emr_code IS '病历实例编码';
-COMMENT ON COLUMN emr_record_version.version_no IS '病历版本号';
-COMMENT ON COLUMN emr_record_version.emr_content IS '病历内容(JSON)，含医嘱/检查快照';
-COMMENT ON COLUMN emr_record_version.signed_flag IS '是否已签署';
-COMMENT ON COLUMN emr_record_version.create_time IS '创建时间';
-COMMENT ON COLUMN emr_record_version.update_time IS '更新时间';
-
-CREATE UNIQUE INDEX uk_emr_version ON emr_record_version(emr_code, version_no);
-CREATE INDEX idx_emr_version_emr ON emr_record_version(emr_code);
 
 -- ============================
 -- 医嘱系统
