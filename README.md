@@ -1,6 +1,12 @@
 # CCY EMR Service
 
-电子病历管理系统后端服务
+电子病历管理系统 - 前后端一体化项目
+
+## 项目架构
+
+本项目采用 Git Submodule 方式集成前后端：
+- **后端**: Spring Boot 3.2.0 (当前仓库)
+- **前端**: React + Ant Design Pro (作为子模块 `CCY_EMR_UI` 集成)
 
 ## 技术栈
 
@@ -35,7 +41,22 @@ docker-compose ps
 # 密码: minioadmin123
 ```
 
-### 3. 构建并运行
+### 3. 初始化前端子模块
+
+```bash
+# 初始化并更新子模块
+git submodule init
+git submodule update --remote
+
+# 进入前端目录并安装依赖
+cd CCY_EMR_UI
+pnpm install
+
+# 启动前端开发服务器
+pnpm start
+```
+
+### 4. 构建并运行
 
 ```bash
 # 构建项目
@@ -65,6 +86,8 @@ java -jar target/emr-service-1.0.0-SNAPSHOT.jar
 CCY_EMR_SERVICE/
 ├── pom.xml                          # Maven 配置
 ├── docker-compose.yml               # Docker 服务编排
+├── .gitmodules                      # Git 子模块配置
+├── CCY_EMR_UI/                      # 前端子模块 (React + Ant Design Pro)
 ├── src/main/java/com/ccy/emr/
 │   ├── EmrApplication.java          # 启动类
 │   ├── common/                      # 公共模块
@@ -79,9 +102,17 @@ CCY_EMR_SERVICE/
 │   ├── application.yml
 │   └── application-dev.yml
 └── doc/
+    ├── api-docs/                    # API 接口文档
     ├── sql/                         # SQL 脚本
-    └── ai/                          # AI 生成文档
+    ├── ai/                          # AI 生成文档和交互规则
+    ├── log/                         # 日志相关文档
+    ├── own/                         # 自定义文档
+    └── python/                      # Python 脚本文档
 ```
+
+## 文档规范
+
+所有与 AI 工具（如 Cursor、Antigravity 等）的交互关键信息都维护在 `doc/ai/` 目录下。请参考 `doc/ai/ai-interaction-rules.md` 了解详细的交互规则。
 
 ## API 接口
 

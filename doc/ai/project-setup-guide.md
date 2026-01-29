@@ -1,4 +1,4 @@
-# CCY EMR Service 项目搭建完整文档
+# CCY EMR Service Project Setup Guide
 
 > 创建时间: 2026-01-27
 > 作者: AI Assistant (Antigravity)
