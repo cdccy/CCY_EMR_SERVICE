@@ -1,0 +1,3 @@
+[submodule "CCY_EMR_UI"]
+	path = CCY_EMR_UI
+	url = https://github.com/cdccy/CCY_EMR_UI.git
