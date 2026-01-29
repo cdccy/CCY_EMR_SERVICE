@@ -85,7 +85,6 @@ public class EmrApplication {
             };
 
             // 2. APIJSON 核心初始化
-            APIJSONApplication.init(false); // false: 调试模式关闭，true: 调试模式开启 (生产环境建议 false)
             APIJSONApplication.DEFAULT_APIJSON_CREATOR = new APIJSONCreator<Long, JSONObject, JSONArray>() {
                 @Override
                 public APIJSONSQLConfig<Long, JSONObject, JSONArray> createSQLConfig() {
@@ -107,6 +106,7 @@ public class EmrApplication {
                     return new APIJSONFunctionParser<>();
                 }
             };
+            APIJSONApplication.init(false); // false: 调试模式关闭，true: 调试模式开启 (生产环境建议 false)
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -24,7 +24,7 @@
 1. **按顺序阅读以下文件**：
    - `README.md`（项目概述和结构）
    - `doc/ai/ai-interaction-rules.md`（本文档）
-   - `doc/ai/project-analysis-report.md`（项目分析）
+   - `doc/ai/project-analysis-report.md`（旧版项目分析，启动项目根据此文件）
    - `doc/ai/project-setup-guide.md`（设置说明）
 
 2. **理解 Git 子模块结构**：

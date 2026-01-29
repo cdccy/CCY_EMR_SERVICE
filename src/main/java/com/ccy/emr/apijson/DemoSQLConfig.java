@@ -41,4 +41,9 @@ public class DemoSQLConfig extends APIJSONSQLConfig<Long, JSONObject, JSONArray>
     public String gainDBPassword() {
         return "emr_password";
     }
+    
+    @JSONField(serialize = false)
+    public String gainDBDriver() {
+        return "org.postgresql.Driver";
+    }
 }
