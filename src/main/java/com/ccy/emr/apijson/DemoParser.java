@@ -13,6 +13,11 @@ import com.alibaba.fastjson.JSONObject;
  */
 public class DemoParser extends APIJSONParser<Long, JSONObject, JSONArray> {
 
+//    static {
+//        // 放宽分页限制，允许翻页到 5000 页
+//        MAX_PAGE = 5000;
+//    }
+
     public DemoParser() {
         super();
     }

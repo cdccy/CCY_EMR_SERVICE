@@ -14,102 +14,16 @@ import com.ccy.emr.apijson.DemoVerifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import jakarta.annotation.PostConstruct;
+
 /**
  * CCY 电子病历管理系统启动类
- *
- * @author CCY
- * @date 2026-01-27
  */
 @SpringBootApplication
 public class EmrApplication {
 
     public static void main(String[] args) {
-        try {
-            // 1. 初始化 JSON 解析器 (APIJSON 8.0+ 必须)
-            apijson.JSON.DEFAULT_JSON_PARSER = new apijson.JSONParser<JSONObject, JSONArray>() {
-                @Override
-                public JSONObject createJSONObject() {
-                    return new JSONObject(true); // true 保持顺序
-                }
 
-                @Override
-                public JSONArray createJSONArray() {
-                    return new JSONArray();
-                }
-
-                @Override
-                public Object parse(Object obj) {
-                    if (obj == null)
-                        return null;
-                    return com.alibaba.fastjson.JSON.parse(obj.toString());
-                }
-
-                @Override
-                public JSONObject parseObject(Object obj) {
-                    if (obj == null)
-                        return null;
-                    return com.alibaba.fastjson.JSON.parseObject(obj.toString());
-                }
-
-                @Override
-                public <T> T parseObject(Object obj, Class<T> clazz) {
-                    if (obj == null)
-                        return null;
-                    return com.alibaba.fastjson.JSON.parseObject(obj.toString(), clazz);
-                }
-
-                @Override
-                public JSONArray parseArray(Object obj) {
-                    if (obj == null)
-                        return null;
-                    return com.alibaba.fastjson.JSON.parseArray(obj.toString());
-                }
-
-                @Override
-                public <T> java.util.List<T> parseArray(Object obj, Class<T> clazz) {
-                    if (obj == null)
-                        return null;
-                    return com.alibaba.fastjson.JSON.parseArray(obj.toString(), clazz);
-                }
-
-                @Override
-                public String toJSONString(Object obj, boolean prettyFormat) {
-                    if (obj == null)
-                        return null;
-                    if (prettyFormat) {
-                        return com.alibaba.fastjson.JSON.toJSONString(obj,
-                                com.alibaba.fastjson.serializer.SerializerFeature.PrettyFormat);
-                    }
-                    return com.alibaba.fastjson.JSON.toJSONString(obj);
-                }
-            };
-
-            // 2. APIJSON 核心初始化
-            APIJSONApplication.DEFAULT_APIJSON_CREATOR = new APIJSONCreator<Long, JSONObject, JSONArray>() {
-                @Override
-                public APIJSONSQLConfig<Long, JSONObject, JSONArray> createSQLConfig() {
-                    return new DemoSQLConfig();
-                }
-
-                @Override
-                public APIJSONParser<Long, JSONObject, JSONArray> createParser() {
-                    return new DemoParser();
-                }
-
-                @Override
-                public APIJSONVerifier<Long, JSONObject, JSONArray> createVerifier() {
-                    return new DemoVerifier();
-                }
-
-                @Override
-                public APIJSONFunctionParser<Long, JSONObject, JSONArray> createFunctionParser() {
-                    return new APIJSONFunctionParser<>();
-                }
-            };
-            APIJSONApplication.init(false); // false: 调试模式关闭，true: 调试模式开启 (生产环境建议 false)
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         SpringApplication.run(EmrApplication.class, args);
         System.out.println("\n" +
@@ -120,9 +34,43 @@ public class EmrApplication {
                 "   \\/_____/\\/_____/\\/_/        \\/_____/\\/_/  \\/_/\\/_/ /_/ \n" +
                 "                                                          \n" +
                 "  :: CCY EMR Service ::  (v1.0.0-SNAPSHOT)                \n" +
-                "  :: 电子病历管理系统 ::                                    \n" +
-                "\n" +
-                "  Swagger UI: http://localhost:8080/api/swagger-ui.html   \n" +
-                "  API Docs:   http://localhost:8080/api/v3/api-docs       \n");
+                "  :: 电子病历管理系统 ::                                    \n");
+    }
+
+    @PostConstruct
+    public void init() {
+        try {
+            // 1. 初始化 JSON 解析器
+            apijson.JSON.DEFAULT_JSON_PARSER = new apijson.JSONParser<JSONObject, JSONArray>() {
+                @Override public JSONObject createJSONObject() { return new JSONObject(true); }
+                @Override public JSONArray createJSONArray() { return new JSONArray(); }
+                @Override public Object parse(Object obj) { return obj == null ? null : com.alibaba.fastjson.JSON.parse(obj.toString()); }
+                @Override public JSONObject parseObject(Object obj) { return obj == null ? null : com.alibaba.fastjson.JSON.parseObject(obj.toString()); }
+                @Override public <T> T parseObject(Object obj, Class<T> clazz) { return obj == null ? null : com.alibaba.fastjson.JSON.parseObject(obj.toString(), clazz); }
+                @Override public JSONArray parseArray(Object obj) { return obj == null ? null : com.alibaba.fastjson.JSON.parseArray(obj.toString()); }
+                @Override public <T> java.util.List<T> parseArray(Object obj, Class<T> clazz) { return obj == null ? null : com.alibaba.fastjson.JSON.parseArray(obj.toString(), clazz); }
+                @Override public String toJSONString(Object obj, boolean prettyFormat) {
+                    if (obj == null) return null;
+                    return prettyFormat ? com.alibaba.fastjson.JSON.toJSONString(obj, com.alibaba.fastjson.serializer.SerializerFeature.PrettyFormat) : com.alibaba.fastjson.JSON.toJSONString(obj);
+                }
+            };
+
+            // 2. APIJSON 核心初始化
+            APIJSONApplication.DEFAULT_APIJSON_CREATOR = new APIJSONCreator<Long, JSONObject, JSONArray>() {
+                @Override public APIJSONSQLConfig<Long, JSONObject, JSONArray> createSQLConfig() { return new DemoSQLConfig(); }
+                @Override public APIJSONParser<Long, JSONObject, JSONArray> createParser() { return new DemoParser(); }
+                @Override public APIJSONVerifier<Long, JSONObject, JSONArray> createVerifier() { return new DemoVerifier(); }
+                @Override public APIJSONFunctionParser<Long, JSONObject, JSONArray> createFunctionParser() { return new APIJSONFunctionParser<>(); }
+            };
+            
+            // 关键：强制设置表名映射，确保 DataSet 对应 emr_data_set
+            APIJSONApplication.init(false);
+
+            // 放宽最大查询条数
+
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

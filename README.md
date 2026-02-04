@@ -104,6 +104,9 @@ CCY_EMR_SERVICE/
 └── doc/
     ├── api-docs/                    # API 接口文档
     ├── sql/                         # SQL 脚本
+    │   ├── apijson_config.sql       # APIJSON 配置脚本（包含完整的 ACCESS 表配置）
+    │   ├── init.sql                 # 基础表结构初始化
+    │   └── init2.sql                # 业务表结构初始化
     ├── ai/                          # AI 生成文档和交互规则
     ├── log/                         # 日志相关文档
     ├── own/                         # 自定义文档
@@ -126,6 +129,22 @@ CCY_EMR_SERVICE/
 
 - `POST /api/file/upload` - 上传文件
 - `DELETE /api/file/delete` - 删除文件
+
+### APIJSON 接口
+
+- `POST /apijson/get` - 单条数据查询
+- `POST /apijson/gets` - 列表数据查询
+- `POST /apijson/post` - 新增数据
+- `POST /apijson/put` - 更新数据
+- `POST /apijson/delete` - 删除数据
+
+**重要**: APIJSON 接口路径必须为 `/apijson/{method}`，不能使用 `/api/json` 等其他路径。
+
+## APIJSON 配置说明
+
+完整的 APIJSON ACCESS 表配置信息请参考：
+- 后端: `doc/sql/apijson_config.sql`
+- 前端: `CCY_EMR_UI/doc/apijson_access_summary.md`
 
 ## 更多文档
 

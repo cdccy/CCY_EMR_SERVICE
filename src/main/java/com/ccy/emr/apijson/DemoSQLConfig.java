@@ -13,10 +13,13 @@ import com.alibaba.fastjson.annotation.JSONField;
  */
 public class DemoSQLConfig extends APIJSONSQLConfig<Long, JSONObject, JSONArray> {
 
+
+
     static {
         DEFAULT_DATABASE = DATABASE_POSTGRESQL; // 默认数据库类型
         DEFAULT_SCHEMA = "public"; // 默认 Schema
     }
+
 
     @Override
     public String gainDBVersion() {

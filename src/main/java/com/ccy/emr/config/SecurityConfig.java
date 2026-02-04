@@ -40,6 +40,8 @@ public class SecurityConfig {
                         "/auth/login",
                         "/auth/register",
                         "/auth/captcha",
+                        // APIJSON 相关
+                        "/apijson/**",
                         // API 文档
                         "/swagger-ui/**",
                         "/swagger-ui.html",
