@@ -46,22 +46,22 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         try {
             // 获取 Token
             String token = getTokenFromRequest(request);
-
+    
             if (StringUtils.hasText(token) && jwtUtil.validateToken(token)) {
                 // 从 Token 中获取用户名
                 String username = jwtUtil.getUsernameFromToken(token);
-
+    
                 if (StringUtils.hasText(username) && SecurityContextHolder.getContext().getAuthentication() == null) {
-                    // 检查 Redis 中是否存在该 Token (可选: 用于实现登出功能)
+                    // 检查 Redis 中是否存在该 Token (可选：用于实现登出功能)
                     String redisKey = REDIS_TOKEN_PREFIX + username;
                     Object cachedToken = redisTemplate.opsForValue().get(redisKey);
-
+    
                     // 如果需要严格验证 Token，可以检查 Redis 中的 Token 是否匹配
                     // if (cachedToken != null && token.equals(cachedToken.toString())) { ... }
-
+    
                     // 加载用户信息
                     UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-
+    
                     if (userDetails != null) {
                         // 创建认证对象
                         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
@@ -69,17 +69,29 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                 null,
                                 userDetails.getAuthorities());
                         authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-
+    
                         // 设置到 SecurityContext
                         SecurityContextHolder.getContext().setAuthentication(authentication);
                         log.debug("用户 {} 认证成功", username);
                     }
                 }
+            } else if (StringUtils.hasText(token)) {
+                // Token 存在但无效，设置认证失败响应
+                log.warn("无效的 JWT Token");
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                response.setContentType("application/json;charset=UTF-8");
+                response.getWriter().write("{\"code\":401,\"message\":\"无效的 Token\"}");
+                return;
             }
         } catch (Exception e) {
-            log.error("JWT 认证失败: {}", e.getMessage());
+            log.error("JWT 认证失败：{}", e.getMessage(), e);
+            // 认证失败，返回 401
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.setContentType("application/json;charset=UTF-8");
+            response.getWriter().write("{\"code\":401,\"message\":\"认证失败：" + e.getMessage() + "\"}");
+            return;
         }
-
+    
         filterChain.doFilter(request, response);
     }
 
