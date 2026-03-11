@@ -90,16 +90,6 @@ public class DemoController extends APIJSONController<Long, JSONObject, JSONArra
             denied.put("ok", false);
             return denied.toJSONString();
         }
-
-        // 兜底修复：APIJSON 对 PostgreSQL DATE 的 PUT 绑定有时会按 VARCHAR 传参导致报错。
-        // 对 Patient 的 PUT 请求走显式 CAST(? AS DATE) 更新，避免 date/varchar 类型冲突。
-        String upperMethod = method == null ? "" : method.toUpperCase();
-        if ("PUT".equals(upperMethod)) {
-            String patched = tryUpdatePatientWithDateCast(request);
-            if (patched != null) {
-                return patched;
-            }
-        }
         return super.crud(method, request, session);
     }
 
@@ -138,51 +128,4 @@ public class DemoController extends APIJSONController<Long, JSONObject, JSONArra
         }
     }
 
-    private String tryUpdatePatientWithDateCast(String request) {
-        try {
-            JSONObject body = JSON.parseObject(request);
-            if (body == null || !body.containsKey("Patient")) {
-                return null;
-            }
-            JSONObject patient = body.getJSONObject("Patient");
-            if (patient == null) {
-                return null;
-            }
-
-            Long id = patient.getLong("id");
-            if (id == null) {
-                return null;
-            }
-
-            String birthday = patient.getString("birthday");
-            // 仅在 birthday 为字符串时走兜底 SQL，其它情况仍交给 APIJSON 默认流程
-            if (birthday == null || birthday.isBlank()) {
-                return null;
-            }
-
-            int affected = jdbcTemplate.update(
-                "UPDATE patient SET " +
-                "patient_name = ?, gender_code = ?, birthday = CAST(? AS DATE), id_card = ?, phone = ?, update_time = now() " +
-                "WHERE id = ?",
-                patient.getString("patient_name"),
-                patient.getString("gender_code"),
-                birthday,
-                patient.getString("id_card"),
-                patient.getString("phone"),
-                id
-            );
-
-            JSONObject result = new JSONObject(true);
-            result.put("ok", affected > 0);
-            result.put("code", affected > 0 ? 200 : 404);
-            result.put("msg", affected > 0 ? "success" : "未找到要更新的数据");
-            JSONObject p = new JSONObject(true);
-            p.put("id", id);
-            result.put("Patient", p);
-            return result.toJSONString();
-        } catch (Exception e) {
-            log.error("Patient PUT 日期类型兜底更新失败", e);
-            return null;
-        }
-    }
 }
