@@ -168,6 +168,8 @@ DECLARE
         ARRAY['patient', 'Patient', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["ADMIN"]', '["ADMIN"]', '["ADMIN"]'],
         ARRAY['registration', 'Registration', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["ADMIN"]'],
         ARRAY['outpatient_visit', 'OutpatientVisit', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["ADMIN"]'],
+        ARRAY['outpatient_visit_active', 'OutpatientVisitActive', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["ADMIN"]'],
+        ARRAY['outpatient_visit_history', 'OutpatientVisitHistory', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["ADMIN"]'],
         ARRAY['sys_department', 'Department', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["ADMIN"]', '["ADMIN"]', '["ADMIN"]'],
         ARRAY['doctor', 'Doctor', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["ADMIN"]', '["ADMIN"]', '["ADMIN"]'],
         ARRAY['emr_data_element', 'DataElement', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["ADMIN"]', '["ADMIN"]', '["ADMIN"]'],

@@ -37,3 +37,4 @@
 ## 历史数据防篡改
 
 - `outpatient_visit_history` 禁止 `UPDATE/DELETE`，仅允许 `INSERT`。
+ 

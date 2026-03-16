@@ -23,6 +23,15 @@ UPDATE "Access"
 SET alias = 'OutpatientEncounterData' 
 WHERE name = 'outpatient_encounter_data' AND alias != 'OutpatientEncounterData';
 
+-- 更新门诊活跃/历史就诊表别名
+UPDATE "Access"
+SET alias = 'OutpatientVisitActive'
+WHERE name = 'outpatient_visit_active' AND alias != 'OutpatientVisitActive';
+
+UPDATE "Access"
+SET alias = 'OutpatientVisitHistory'
+WHERE name = 'outpatient_visit_history' AND alias != 'OutpatientVisitHistory';
+
 -- 更新医嘱系统相关表别名
 UPDATE "Access" 
 SET alias = 'MedicalOrderDrug' 
@@ -45,6 +54,8 @@ WHERE name IN (
     'emr_template_department',
     'emr_record_version', 
     'doctor_favorite_template',
+    'outpatient_visit_active',
+    'outpatient_visit_history',
     'outpatient_encounter_data',
     'medical_order_drug',
     'medical_order_exam',

@@ -54,6 +54,8 @@ VALUES
     ('patient', 'Patient', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["ADMIN"]', '["ADMIN"]', '["ADMIN"]'),
     ('registration', 'Registration', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["ADMIN"]'),
     ('outpatient_visit', 'OutpatientVisit', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["ADMIN"]'),
+    ('outpatient_visit_active', 'OutpatientVisitActive', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["ADMIN"]'),
+    ('outpatient_visit_history', 'OutpatientVisitHistory', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["ADMIN"]'),
     ('sys_department', 'Department', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["ADMIN"]', '["ADMIN"]', '["ADMIN"]'),
     ('doctor', 'Doctor', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["ADMIN"]', '["ADMIN"]', '["ADMIN"]'),
     
@@ -104,7 +106,7 @@ SELECT name, alias, get, post, delete
 FROM "Access" 
 WHERE name IN (
     'Function', 'Script', 'Request', 'Document',
-    'patient', 'registration', 'outpatient_visit', 'sys_department', 'doctor',
+    'patient', 'registration', 'outpatient_visit', 'outpatient_visit_active', 'outpatient_visit_history', 'sys_department', 'doctor',
     'emr_data_element', 'emr_data_set', 'emr_data_set_element',
     'emr_template', 'emr_record',
     'emr_value_domain', 'emr_value_domain_item',
