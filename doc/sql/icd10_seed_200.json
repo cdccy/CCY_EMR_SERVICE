@@ -1,0 +1,1402 @@
+[
+  {
+    "diag_code": "A00",
+    "diag_name": "霍乱",
+    "pinyin_initials": "HL",
+    "status": 1,
+    "sort_no": 1
+  },
+  {
+    "diag_code": "A01",
+    "diag_name": "伤寒和副伤寒",
+    "pinyin_initials": "SHHFSH",
+    "status": 1,
+    "sort_no": 2
+  },
+  {
+    "diag_code": "A02",
+    "diag_name": "其他沙门菌感染",
+    "pinyin_initials": "QTSMJGR",
+    "status": 1,
+    "sort_no": 3
+  },
+  {
+    "diag_code": "A03",
+    "diag_name": "细菌性痢疾",
+    "pinyin_initials": "XJXLJ",
+    "status": 1,
+    "sort_no": 4
+  },
+  {
+    "diag_code": "A04",
+    "diag_name": "其他细菌性肠道感染",
+    "pinyin_initials": "QTXJXCDGR",
+    "status": 1,
+    "sort_no": 5
+  },
+  {
+    "diag_code": "A05",
+    "diag_name": "其他细菌性食物中毒,不可归类在他处者",
+    "pinyin_initials": "QTXJXSWZDBKGLZTCZ",
+    "status": 1,
+    "sort_no": 6
+  },
+  {
+    "diag_code": "A06",
+    "diag_name": "阿米巴病",
+    "pinyin_initials": "AMBB",
+    "status": 1,
+    "sort_no": 7
+  },
+  {
+    "diag_code": "A07",
+    "diag_name": "其他原虫性肠道疾病",
+    "pinyin_initials": "QTYCXCDJB",
+    "status": 1,
+    "sort_no": 8
+  },
+  {
+    "diag_code": "A08",
+    "diag_name": "病毒性和其他特指的肠道感染",
+    "pinyin_initials": "BDXHQTTZDCDGR",
+    "status": 1,
+    "sort_no": 9
+  },
+  {
+    "diag_code": "A09",
+    "diag_name": "其他传染性和未特指病因的胃肠炎和结肠炎",
+    "pinyin_initials": "QTCRXHWTZBYDWCYHJCY",
+    "status": 1,
+    "sort_no": 10
+  },
+  {
+    "diag_code": "A15",
+    "diag_name": "呼吸道结核,经细菌学和组织学证实",
+    "pinyin_initials": "HXDJHJXJXHZZXZS",
+    "status": 1,
+    "sort_no": 11
+  },
+  {
+    "diag_code": "A16",
+    "diag_name": "呼吸道结核,未经细菌学或组织学所证实",
+    "pinyin_initials": "HXDJHWJXJXHZZXSZS",
+    "status": 1,
+    "sort_no": 12
+  },
+  {
+    "diag_code": "A18",
+    "diag_name": "其他器官的结核",
+    "pinyin_initials": "QTQGDJH",
+    "status": 1,
+    "sort_no": 13
+  },
+  {
+    "diag_code": "A19",
+    "diag_name": "粟粒性结核",
+    "pinyin_initials": "SLXJH",
+    "status": 1,
+    "sort_no": 14
+  },
+  {
+    "diag_code": "A20",
+    "diag_name": "鼠疫",
+    "pinyin_initials": "SY",
+    "status": 1,
+    "sort_no": 15
+  },
+  {
+    "diag_code": "A21",
+    "diag_name": "土拉菌病[兔热病]",
+    "pinyin_initials": "TLJBTRB",
+    "status": 1,
+    "sort_no": 16
+  },
+  {
+    "diag_code": "A22",
+    "diag_name": "炭疽",
+    "pinyin_initials": "TJ",
+    "status": 1,
+    "sort_no": 17
+  },
+  {
+    "diag_code": "A23",
+    "diag_name": "布氏菌病",
+    "pinyin_initials": "BSJB",
+    "status": 1,
+    "sort_no": 18
+  },
+  {
+    "diag_code": "A24",
+    "diag_name": "鼻疽和类鼻疽",
+    "pinyin_initials": "BJHLBJ",
+    "status": 1,
+    "sort_no": 19
+  },
+  {
+    "diag_code": "A25",
+    "diag_name": "鼠咬热",
+    "pinyin_initials": "SYR",
+    "status": 1,
+    "sort_no": 20
+  },
+  {
+    "diag_code": "A26",
+    "diag_name": "类丹毒",
+    "pinyin_initials": "LDD",
+    "status": 1,
+    "sort_no": 21
+  },
+  {
+    "diag_code": "A27",
+    "diag_name": "钩端螺旋体病",
+    "pinyin_initials": "GDLXTB",
+    "status": 1,
+    "sort_no": 22
+  },
+  {
+    "diag_code": "A28",
+    "diag_name": "其他动物源性细菌性疾病,不可归类在他处者",
+    "pinyin_initials": "QTDWYXXJXJBBKGLZTCZ",
+    "status": 1,
+    "sort_no": 23
+  },
+  {
+    "diag_code": "A30",
+    "diag_name": "麻风[汉森病]",
+    "pinyin_initials": "MFHSB",
+    "status": 1,
+    "sort_no": 24
+  },
+  {
+    "diag_code": "A31",
+    "diag_name": "其他分枝杆菌感染",
+    "pinyin_initials": "QTFZGJGR",
+    "status": 1,
+    "sort_no": 25
+  },
+  {
+    "diag_code": "A32",
+    "diag_name": "利斯特菌病",
+    "pinyin_initials": "LSTJB",
+    "status": 1,
+    "sort_no": 26
+  },
+  {
+    "diag_code": "A33",
+    "diag_name": "新生儿破伤风",
+    "pinyin_initials": "XSEPSF",
+    "status": 1,
+    "sort_no": 27
+  },
+  {
+    "diag_code": "A34",
+    "diag_name": "产科破伤风",
+    "pinyin_initials": "CKPSF",
+    "status": 1,
+    "sort_no": 28
+  },
+  {
+    "diag_code": "A35",
+    "diag_name": "其他破伤风",
+    "pinyin_initials": "QTPSF",
+    "status": 1,
+    "sort_no": 29
+  },
+  {
+    "diag_code": "A36",
+    "diag_name": "白喉",
+    "pinyin_initials": "BH",
+    "status": 1,
+    "sort_no": 30
+  },
+  {
+    "diag_code": "A37",
+    "diag_name": "百日咳",
+    "pinyin_initials": "BRK",
+    "status": 1,
+    "sort_no": 31
+  },
+  {
+    "diag_code": "A38",
+    "diag_name": "猩红热",
+    "pinyin_initials": "XHR",
+    "status": 1,
+    "sort_no": 32
+  },
+  {
+    "diag_code": "A39",
+    "diag_name": "脑膜炎球菌感染",
+    "pinyin_initials": "NMYQJGR",
+    "status": 1,
+    "sort_no": 33
+  },
+  {
+    "diag_code": "A40",
+    "diag_name": "链球菌性败血症",
+    "pinyin_initials": "LQJXBXZ",
+    "status": 1,
+    "sort_no": 34
+  },
+  {
+    "diag_code": "A41",
+    "diag_name": "其他脓毒病",
+    "pinyin_initials": "QTNDB",
+    "status": 1,
+    "sort_no": 35
+  },
+  {
+    "diag_code": "A42",
+    "diag_name": "放线菌病",
+    "pinyin_initials": "FXJB",
+    "status": 1,
+    "sort_no": 36
+  },
+  {
+    "diag_code": "A43",
+    "diag_name": "诺卡菌病",
+    "pinyin_initials": "NKJB",
+    "status": 1,
+    "sort_no": 37
+  },
+  {
+    "diag_code": "A44",
+    "diag_name": "巴尔通体病",
+    "pinyin_initials": "BETTB",
+    "status": 1,
+    "sort_no": 38
+  },
+  {
+    "diag_code": "A46",
+    "diag_name": "丹毒",
+    "pinyin_initials": "DD",
+    "status": 1,
+    "sort_no": 39
+  },
+  {
+    "diag_code": "A48",
+    "diag_name": "其他细菌性疾病,不可归类在他处者",
+    "pinyin_initials": "QTXJXJBBKGLZTCZ",
+    "status": 1,
+    "sort_no": 40
+  },
+  {
+    "diag_code": "A49",
+    "diag_name": "未特指部位的细菌性感染",
+    "pinyin_initials": "WTZBWDXJXGR",
+    "status": 1,
+    "sort_no": 41
+  },
+  {
+    "diag_code": "A50",
+    "diag_name": "先天性梅毒",
+    "pinyin_initials": "XTXMD",
+    "status": 1,
+    "sort_no": 42
+  },
+  {
+    "diag_code": "A51",
+    "diag_name": "早期梅毒",
+    "pinyin_initials": "ZQMD",
+    "status": 1,
+    "sort_no": 43
+  },
+  {
+    "diag_code": "A52",
+    "diag_name": "晚期梅毒",
+    "pinyin_initials": "WQMD",
+    "status": 1,
+    "sort_no": 44
+  },
+  {
+    "diag_code": "A53",
+    "diag_name": "其他和未特指的梅毒",
+    "pinyin_initials": "QTHWTZDMD",
+    "status": 1,
+    "sort_no": 45
+  },
+  {
+    "diag_code": "A54",
+    "diag_name": "淋球菌感染",
+    "pinyin_initials": "LQJGR",
+    "status": 1,
+    "sort_no": 46
+  },
+  {
+    "diag_code": "A55",
+    "diag_name": "衣原体(性病性)淋巴肉芽肿",
+    "pinyin_initials": "YYTXBXLBRYZ",
+    "status": 1,
+    "sort_no": 47
+  },
+  {
+    "diag_code": "A56",
+    "diag_name": "其他性传播的衣原体疾病",
+    "pinyin_initials": "QTXCBDYYTJB",
+    "status": 1,
+    "sort_no": 48
+  },
+  {
+    "diag_code": "A57",
+    "diag_name": "软下疳",
+    "pinyin_initials": "RXG",
+    "status": 1,
+    "sort_no": 49
+  },
+  {
+    "diag_code": "A58",
+    "diag_name": "腹股沟肉芽肿",
+    "pinyin_initials": "FGGRYZ",
+    "status": 1,
+    "sort_no": 50
+  },
+  {
+    "diag_code": "A59",
+    "diag_name": "滴虫病[毛滴虫病]",
+    "pinyin_initials": "DCBMDCB",
+    "status": 1,
+    "sort_no": 51
+  },
+  {
+    "diag_code": "A60",
+    "diag_name": "肛门生殖器的疱疹病毒[单纯疱疹]感染",
+    "pinyin_initials": "GMSZQDPZBDDCPZGR",
+    "status": 1,
+    "sort_no": 52
+  },
+  {
+    "diag_code": "A63",
+    "diag_name": "其他主要为性传播的疾病,不可归类在他处者",
+    "pinyin_initials": "QTZYWXCBDJBBKGLZTCZ",
+    "status": 1,
+    "sort_no": 53
+  },
+  {
+    "diag_code": "A64",
+    "diag_name": "未特指的性传播疾病",
+    "pinyin_initials": "WTZDXCBJB",
+    "status": 1,
+    "sort_no": 54
+  },
+  {
+    "diag_code": "A65",
+    "diag_name": "非性病性梅毒",
+    "pinyin_initials": "FXBXMD",
+    "status": 1,
+    "sort_no": 55
+  },
+  {
+    "diag_code": "A66",
+    "diag_name": "雅司病",
+    "pinyin_initials": "YSB",
+    "status": 1,
+    "sort_no": 56
+  },
+  {
+    "diag_code": "A67",
+    "diag_name": "品他病",
+    "pinyin_initials": "PTB",
+    "status": 1,
+    "sort_no": 57
+  },
+  {
+    "diag_code": "A68",
+    "diag_name": "回归热",
+    "pinyin_initials": "HGR",
+    "status": 1,
+    "sort_no": 58
+  },
+  {
+    "diag_code": "A69",
+    "diag_name": "其他螺旋体感染",
+    "pinyin_initials": "QTLXTGR",
+    "status": 1,
+    "sort_no": 59
+  },
+  {
+    "diag_code": "A70",
+    "diag_name": "鹦鹉热衣原体感染",
+    "pinyin_initials": "YWRYYTGR",
+    "status": 1,
+    "sort_no": 60
+  },
+  {
+    "diag_code": "A71",
+    "diag_name": "沙眼",
+    "pinyin_initials": "SY",
+    "status": 1,
+    "sort_no": 61
+  },
+  {
+    "diag_code": "A74",
+    "diag_name": "由衣原体引起的其他疾病",
+    "pinyin_initials": "YYYTYQDQTJB",
+    "status": 1,
+    "sort_no": 62
+  },
+  {
+    "diag_code": "A75",
+    "diag_name": "斑疹伤寒",
+    "pinyin_initials": "BZSH",
+    "status": 1,
+    "sort_no": 63
+  },
+  {
+    "diag_code": "A77",
+    "diag_name": "斑疹热[蜱媒介的立克次体病]",
+    "pinyin_initials": "BZRPMJDLKCTB",
+    "status": 1,
+    "sort_no": 64
+  },
+  {
+    "diag_code": "A78",
+    "diag_name": "Q热",
+    "pinyin_initials": "QR",
+    "status": 1,
+    "sort_no": 65
+  },
+  {
+    "diag_code": "A79",
+    "diag_name": "其他立克次体病",
+    "pinyin_initials": "QTLKCTB",
+    "status": 1,
+    "sort_no": 66
+  },
+  {
+    "diag_code": "A80",
+    "diag_name": "急性脊髓灰质炎",
+    "pinyin_initials": "JXJSHZY",
+    "status": 1,
+    "sort_no": 67
+  },
+  {
+    "diag_code": "A81",
+    "diag_name": "中枢神经系统的非典型病毒感染",
+    "pinyin_initials": "ZSSJXTDFDXBDGR",
+    "status": 1,
+    "sort_no": 68
+  },
+  {
+    "diag_code": "A82",
+    "diag_name": "狂犬病",
+    "pinyin_initials": "KQB",
+    "status": 1,
+    "sort_no": 69
+  },
+  {
+    "diag_code": "A83",
+    "diag_name": "蚊媒介的病毒性脑炎",
+    "pinyin_initials": "WMJDBDXNY",
+    "status": 1,
+    "sort_no": 70
+  },
+  {
+    "diag_code": "A84",
+    "diag_name": "蜱媒介的病毒性脑炎",
+    "pinyin_initials": "PMJDBDXNY",
+    "status": 1,
+    "sort_no": 71
+  },
+  {
+    "diag_code": "A85",
+    "diag_name": "其他病毒性脑炎,不可归类在他处者",
+    "pinyin_initials": "QTBDXNYBKGLZTCZ",
+    "status": 1,
+    "sort_no": 72
+  },
+  {
+    "diag_code": "A86",
+    "diag_name": "未特指的病毒性脑炎",
+    "pinyin_initials": "WTZDBDXNY",
+    "status": 1,
+    "sort_no": 73
+  },
+  {
+    "diag_code": "A87",
+    "diag_name": "病毒性脑膜炎",
+    "pinyin_initials": "BDXNMY",
+    "status": 1,
+    "sort_no": 74
+  },
+  {
+    "diag_code": "A88",
+    "diag_name": "中枢神经系统的其他病毒性感染,不可归类在他处者",
+    "pinyin_initials": "ZSSJXTDQTBDXGRBKGLZTCZ",
+    "status": 1,
+    "sort_no": 75
+  },
+  {
+    "diag_code": "A89",
+    "diag_name": "中枢神经系统未特指的病毒性感染",
+    "pinyin_initials": "ZSSJXTWTZDBDXGR",
+    "status": 1,
+    "sort_no": 76
+  },
+  {
+    "diag_code": "A90",
+    "diag_name": "登革热[古典登革热]",
+    "pinyin_initials": "DGRGDDGR",
+    "status": 1,
+    "sort_no": 77
+  },
+  {
+    "diag_code": "A91",
+    "diag_name": "登革出血热",
+    "pinyin_initials": "DGCXR",
+    "status": 1,
+    "sort_no": 78
+  },
+  {
+    "diag_code": "A92",
+    "diag_name": "其他蚊媒介的病毒性发热",
+    "pinyin_initials": "QTWMJDBDXFR",
+    "status": 1,
+    "sort_no": 79
+  },
+  {
+    "diag_code": "A93",
+    "diag_name": "其他节肢动物媒介的病毒性发热,不可归类在他处者",
+    "pinyin_initials": "QTJZDWMJDBDXFRBKGLZTCZ",
+    "status": 1,
+    "sort_no": 80
+  },
+  {
+    "diag_code": "A94",
+    "diag_name": "未特指的节肢动物媒介的病毒性发热",
+    "pinyin_initials": "WTZDJZDWMJDBDXFR",
+    "status": 1,
+    "sort_no": 81
+  },
+  {
+    "diag_code": "A95",
+    "diag_name": "黄热病",
+    "pinyin_initials": "HRB",
+    "status": 1,
+    "sort_no": 82
+  },
+  {
+    "diag_code": "A96",
+    "diag_name": "沙粒病毒性出血热",
+    "pinyin_initials": "SLBDXCXR",
+    "status": 1,
+    "sort_no": 83
+  },
+  {
+    "diag_code": "A98",
+    "diag_name": "其他病毒性出血热,不可归类在他处者",
+    "pinyin_initials": "QTBDXCXRBKGLZTCZ",
+    "status": 1,
+    "sort_no": 84
+  },
+  {
+    "diag_code": "A99",
+    "diag_name": "未特指的病毒性出血热",
+    "pinyin_initials": "WTZDBDXCXR",
+    "status": 1,
+    "sort_no": 85
+  },
+  {
+    "diag_code": "B00",
+    "diag_name": "疱疹病毒[单纯疱疹]感染",
+    "pinyin_initials": "PZBDDCPZGR",
+    "status": 1,
+    "sort_no": 86
+  },
+  {
+    "diag_code": "B01",
+    "diag_name": "水痘",
+    "pinyin_initials": "SD",
+    "status": 1,
+    "sort_no": 87
+  },
+  {
+    "diag_code": "B02",
+    "diag_name": "带状疱疹",
+    "pinyin_initials": "DZPZ",
+    "status": 1,
+    "sort_no": 88
+  },
+  {
+    "diag_code": "B03",
+    "diag_name": "天花",
+    "pinyin_initials": "TH",
+    "status": 1,
+    "sort_no": 89
+  },
+  {
+    "diag_code": "B04",
+    "diag_name": "猴痘",
+    "pinyin_initials": "HD",
+    "status": 1,
+    "sort_no": 90
+  },
+  {
+    "diag_code": "B05",
+    "diag_name": "麻疹",
+    "pinyin_initials": "MZ",
+    "status": 1,
+    "sort_no": 91
+  },
+  {
+    "diag_code": "B06",
+    "diag_name": "风疹",
+    "pinyin_initials": "FZ",
+    "status": 1,
+    "sort_no": 92
+  },
+  {
+    "diag_code": "B07",
+    "diag_name": "病毒性疣",
+    "pinyin_initials": "BDXY",
+    "status": 1,
+    "sort_no": 93
+  },
+  {
+    "diag_code": "B08",
+    "diag_name": "其他以皮肤和粘膜损害为特征的病毒性感染,不可归类在他处者",
+    "pinyin_initials": "QTYPFHZMSHWTZDBDXGRBKGLZTCZ",
+    "status": 1,
+    "sort_no": 94
+  },
+  {
+    "diag_code": "B09",
+    "diag_name": "未特指的以皮肤和粘膜损害为特征的病毒性感染",
+    "pinyin_initials": "WTZDYPFHZMSHWTZDBDXGR",
+    "status": 1,
+    "sort_no": 95
+  },
+  {
+    "diag_code": "B15",
+    "diag_name": "急性甲型肝炎",
+    "pinyin_initials": "JXJXGY",
+    "status": 1,
+    "sort_no": 96
+  },
+  {
+    "diag_code": "B16",
+    "diag_name": "急性乙型肝炎",
+    "pinyin_initials": "JXYXGY",
+    "status": 1,
+    "sort_no": 97
+  },
+  {
+    "diag_code": "B17",
+    "diag_name": "其他急性病毒性肝炎",
+    "pinyin_initials": "QTJXBDXGY",
+    "status": 1,
+    "sort_no": 98
+  },
+  {
+    "diag_code": "B18",
+    "diag_name": "慢性病毒性肝炎",
+    "pinyin_initials": "MXBDXGY",
+    "status": 1,
+    "sort_no": 99
+  },
+  {
+    "diag_code": "B19",
+    "diag_name": "未特指的病毒性肝炎",
+    "pinyin_initials": "WTZDBDXGY",
+    "status": 1,
+    "sort_no": 100
+  },
+  {
+    "diag_code": "B20",
+    "diag_name": "人类免疫缺陷病毒[HIV]病造成的传染病和寄生虫病",
+    "pinyin_initials": "RLMYQXBDHIVBZCDCRBHJSCB",
+    "status": 1,
+    "sort_no": 101
+  },
+  {
+    "diag_code": "B21",
+    "diag_name": "人类免疫缺陷病毒[HIV]病造成的恶性肿瘤",
+    "pinyin_initials": "RLMYQXBDHIVBZCDEXZL",
+    "status": 1,
+    "sort_no": 102
+  },
+  {
+    "diag_code": "B22",
+    "diag_name": "人类免疫缺陷病毒[HIV]病造成的其他特指的疾病",
+    "pinyin_initials": "RLMYQXBDHIVBZCDQTTZDJB",
+    "status": 1,
+    "sort_no": 103
+  },
+  {
+    "diag_code": "B23",
+    "diag_name": "人类免疫缺陷病毒[HIV]病造成的其他情况",
+    "pinyin_initials": "RLMYQXBDHIVBZCDQTQK",
+    "status": 1,
+    "sort_no": 104
+  },
+  {
+    "diag_code": "B24",
+    "diag_name": "未特指的人类免疫缺陷病毒[HIV]病",
+    "pinyin_initials": "WTZDRLMYQXBDHIVB",
+    "status": 1,
+    "sort_no": 105
+  },
+  {
+    "diag_code": "B25",
+    "diag_name": "巨细胞病毒病",
+    "pinyin_initials": "JXBBDB",
+    "status": 1,
+    "sort_no": 106
+  },
+  {
+    "diag_code": "B26",
+    "diag_name": "流行牲腮腺炎",
+    "pinyin_initials": "LXSSXY",
+    "status": 1,
+    "sort_no": 107
+  },
+  {
+    "diag_code": "B27",
+    "diag_name": "传染性单核细胞增多症",
+    "pinyin_initials": "CRXDHXBZDZ",
+    "status": 1,
+    "sort_no": 108
+  },
+  {
+    "diag_code": "B30",
+    "diag_name": "病毒性结膜炎",
+    "pinyin_initials": "BDXJMY",
+    "status": 1,
+    "sort_no": 109
+  },
+  {
+    "diag_code": "B33",
+    "diag_name": "其他病毒性疾病,不可归类在他处者",
+    "pinyin_initials": "QTBDXJBBKGLZTCZ",
+    "status": 1,
+    "sort_no": 110
+  },
+  {
+    "diag_code": "B34",
+    "diag_name": "未特指部位的病毒性感染",
+    "pinyin_initials": "WTZBWDBDXGR",
+    "status": 1,
+    "sort_no": 111
+  },
+  {
+    "diag_code": "B35",
+    "diag_name": "皮肤癣菌病",
+    "pinyin_initials": "PFXJB",
+    "status": 1,
+    "sort_no": 112
+  },
+  {
+    "diag_code": "B36",
+    "diag_name": "其他浅部真菌病",
+    "pinyin_initials": "QTQBZJB",
+    "status": 1,
+    "sort_no": 113
+  },
+  {
+    "diag_code": "B37",
+    "diag_name": "念珠菌病",
+    "pinyin_initials": "NZJB",
+    "status": 1,
+    "sort_no": 114
+  },
+  {
+    "diag_code": "B38",
+    "diag_name": "肺球孢子菌病",
+    "pinyin_initials": "FQBZJB",
+    "status": 1,
+    "sort_no": 115
+  },
+  {
+    "diag_code": "B39",
+    "diag_name": "组织胞浆菌病",
+    "pinyin_initials": "ZZBJJB",
+    "status": 1,
+    "sort_no": 116
+  },
+  {
+    "diag_code": "B40",
+    "diag_name": "芽生菌病",
+    "pinyin_initials": "YSJB",
+    "status": 1,
+    "sort_no": 117
+  },
+  {
+    "diag_code": "B41",
+    "diag_name": "副球孢子菌病",
+    "pinyin_initials": "FQBZJB",
+    "status": 1,
+    "sort_no": 118
+  },
+  {
+    "diag_code": "B42",
+    "diag_name": "孢子丝菌病",
+    "pinyin_initials": "BZSJB",
+    "status": 1,
+    "sort_no": 119
+  },
+  {
+    "diag_code": "B43",
+    "diag_name": "着色真菌病与棕色真菌病性脓肿",
+    "pinyin_initials": "ZSZJBYZSZJBXNZ",
+    "status": 1,
+    "sort_no": 120
+  },
+  {
+    "diag_code": "B44",
+    "diag_name": "曲霉病",
+    "pinyin_initials": "QMB",
+    "status": 1,
+    "sort_no": 121
+  },
+  {
+    "diag_code": "B45",
+    "diag_name": "隐球菌病",
+    "pinyin_initials": "YQJB",
+    "status": 1,
+    "sort_no": 122
+  },
+  {
+    "diag_code": "B46",
+    "diag_name": "接合菌病",
+    "pinyin_initials": "JHJB",
+    "status": 1,
+    "sort_no": 123
+  },
+  {
+    "diag_code": "B47",
+    "diag_name": "足菌肿[足分枝菌病]",
+    "pinyin_initials": "ZJZZFZJB",
+    "status": 1,
+    "sort_no": 124
+  },
+  {
+    "diag_code": "B48",
+    "diag_name": "其他真菌病,不可归类在他处者",
+    "pinyin_initials": "QTZJBBKGLZTCZ",
+    "status": 1,
+    "sort_no": 125
+  },
+  {
+    "diag_code": "B49",
+    "diag_name": "未特指的真菌病",
+    "pinyin_initials": "WTZDZJB",
+    "status": 1,
+    "sort_no": 126
+  },
+  {
+    "diag_code": "B50",
+    "diag_name": "恶性疟原虫疟疾",
+    "pinyin_initials": "EXNYCNJ",
+    "status": 1,
+    "sort_no": 127
+  },
+  {
+    "diag_code": "B51",
+    "diag_name": "间日疟原虫疟疾",
+    "pinyin_initials": "JRNYCNJ",
+    "status": 1,
+    "sort_no": 128
+  },
+  {
+    "diag_code": "B52",
+    "diag_name": "三日疟原虫疟疾",
+    "pinyin_initials": "SRNYCNJ",
+    "status": 1,
+    "sort_no": 129
+  },
+  {
+    "diag_code": "B53",
+    "diag_name": "其他经寄生虫学证实的疟疾",
+    "pinyin_initials": "QTJJSCXZSDNJ",
+    "status": 1,
+    "sort_no": 130
+  },
+  {
+    "diag_code": "B54",
+    "diag_name": "未特指的疟疾",
+    "pinyin_initials": "WTZDNJ",
+    "status": 1,
+    "sort_no": 131
+  },
+  {
+    "diag_code": "B55",
+    "diag_name": "利什曼病",
+    "pinyin_initials": "LSMB",
+    "status": 1,
+    "sort_no": 132
+  },
+  {
+    "diag_code": "B56",
+    "diag_name": "非洲锥虫病",
+    "pinyin_initials": "FZZCB",
+    "status": 1,
+    "sort_no": 133
+  },
+  {
+    "diag_code": "B57",
+    "diag_name": "查加斯病",
+    "pinyin_initials": "CJSB",
+    "status": 1,
+    "sort_no": 134
+  },
+  {
+    "diag_code": "B58",
+    "diag_name": "弓形虫病[弓形体病]",
+    "pinyin_initials": "GXCBGXTB",
+    "status": 1,
+    "sort_no": 135
+  },
+  {
+    "diag_code": "B59",
+    "diag_name": "肺孢子虫病",
+    "pinyin_initials": "FBZCB",
+    "status": 1,
+    "sort_no": 136
+  },
+  {
+    "diag_code": "B60",
+    "diag_name": "其他原虫性疾病,不可归类在他处者",
+    "pinyin_initials": "QTYCXJBBKGLZTCZ",
+    "status": 1,
+    "sort_no": 137
+  },
+  {
+    "diag_code": "B64",
+    "diag_name": "未特指的原虫性疾病",
+    "pinyin_initials": "WTZDYCXJB",
+    "status": 1,
+    "sort_no": 138
+  },
+  {
+    "diag_code": "B65",
+    "diag_name": "血吸虫病[裂体吸虫病]",
+    "pinyin_initials": "XXCBLTXCB",
+    "status": 1,
+    "sort_no": 139
+  },
+  {
+    "diag_code": "B66",
+    "diag_name": "其他吸虫感染",
+    "pinyin_initials": "QTXCGR",
+    "status": 1,
+    "sort_no": 140
+  },
+  {
+    "diag_code": "B67",
+    "diag_name": "棘球蚴病",
+    "pinyin_initials": "JQYB",
+    "status": 1,
+    "sort_no": 141
+  },
+  {
+    "diag_code": "B68",
+    "diag_name": "绦虫病",
+    "pinyin_initials": "TCB",
+    "status": 1,
+    "sort_no": 142
+  },
+  {
+    "diag_code": "B69",
+    "diag_name": "囊虫病[囊尾蚴病]",
+    "pinyin_initials": "NCBNWYB",
+    "status": 1,
+    "sort_no": 143
+  },
+  {
+    "diag_code": "B70",
+    "diag_name": "裂头绦虫病和裂头蚴病",
+    "pinyin_initials": "LTTCBHLTYB",
+    "status": 1,
+    "sort_no": 144
+  },
+  {
+    "diag_code": "B71",
+    "diag_name": "其他绦虫感染",
+    "pinyin_initials": "QTTCGR",
+    "status": 1,
+    "sort_no": 145
+  },
+  {
+    "diag_code": "B72",
+    "diag_name": "龙线虫病",
+    "pinyin_initials": "LXCB",
+    "status": 1,
+    "sort_no": 146
+  },
+  {
+    "diag_code": "B73",
+    "diag_name": "盘尾丝虫病",
+    "pinyin_initials": "PWSCB",
+    "status": 1,
+    "sort_no": 147
+  },
+  {
+    "diag_code": "B74",
+    "diag_name": "丝虫病",
+    "pinyin_initials": "SCB",
+    "status": 1,
+    "sort_no": 148
+  },
+  {
+    "diag_code": "B75",
+    "diag_name": "旋毛虫病",
+    "pinyin_initials": "XMCB",
+    "status": 1,
+    "sort_no": 149
+  },
+  {
+    "diag_code": "B76",
+    "diag_name": "钩虫病",
+    "pinyin_initials": "GCB",
+    "status": 1,
+    "sort_no": 150
+  },
+  {
+    "diag_code": "B77",
+    "diag_name": "蛔虫病",
+    "pinyin_initials": "HCB",
+    "status": 1,
+    "sort_no": 151
+  },
+  {
+    "diag_code": "B78",
+    "diag_name": "类圆线虫病",
+    "pinyin_initials": "LYXCB",
+    "status": 1,
+    "sort_no": 152
+  },
+  {
+    "diag_code": "B79",
+    "diag_name": "鞭虫病",
+    "pinyin_initials": "BCB",
+    "status": 1,
+    "sort_no": 153
+  },
+  {
+    "diag_code": "B80",
+    "diag_name": "蛲虫病",
+    "pinyin_initials": "NCB",
+    "status": 1,
+    "sort_no": 154
+  },
+  {
+    "diag_code": "B81",
+    "diag_name": "其他肠道蠕虫病,不可归类在他处者",
+    "pinyin_initials": "QTCDRCBBKGLZTCZ",
+    "status": 1,
+    "sort_no": 155
+  },
+  {
+    "diag_code": "B82",
+    "diag_name": "未特指的肠道寄生虫病",
+    "pinyin_initials": "WTZDCDJSCB",
+    "status": 1,
+    "sort_no": 156
+  },
+  {
+    "diag_code": "B83",
+    "diag_name": "其他蠕虫病",
+    "pinyin_initials": "QTRCB",
+    "status": 1,
+    "sort_no": 157
+  },
+  {
+    "diag_code": "B85",
+    "diag_name": "虱病和阴虱病",
+    "pinyin_initials": "SBHYSB",
+    "status": 1,
+    "sort_no": 158
+  },
+  {
+    "diag_code": "B86",
+    "diag_name": "疥疮",
+    "pinyin_initials": "JC",
+    "status": 1,
+    "sort_no": 159
+  },
+  {
+    "diag_code": "B87",
+    "diag_name": "蝇蛆病",
+    "pinyin_initials": "YQB",
+    "status": 1,
+    "sort_no": 160
+  },
+  {
+    "diag_code": "B88",
+    "diag_name": "其他病虫侵染",
+    "pinyin_initials": "QTBCQR",
+    "status": 1,
+    "sort_no": 161
+  },
+  {
+    "diag_code": "B89",
+    "diag_name": "未特指的寄生虫病",
+    "pinyin_initials": "WTZDJSCB",
+    "status": 1,
+    "sort_no": 162
+  },
+  {
+    "diag_code": "B90",
+    "diag_name": "结核病后遗症",
+    "pinyin_initials": "JHBHYZ",
+    "status": 1,
+    "sort_no": 163
+  },
+  {
+    "diag_code": "B91",
+    "diag_name": "脊髓灰质炎的后遗症",
+    "pinyin_initials": "JSHZYDHYZ",
+    "status": 1,
+    "sort_no": 164
+  },
+  {
+    "diag_code": "B92",
+    "diag_name": "麻风的后遗症",
+    "pinyin_initials": "MFDHYZ",
+    "status": 1,
+    "sort_no": 165
+  },
+  {
+    "diag_code": "B94",
+    "diag_name": "其他和未特指的传染病和寄生虫病的后遗症",
+    "pinyin_initials": "QTHWTZDCRBHJSCBDHYZ",
+    "status": 1,
+    "sort_no": 166
+  },
+  {
+    "diag_code": "B95",
+    "diag_name": "链球菌和葡萄球菌作为分类于其他章疾病的原因",
+    "pinyin_initials": "LQJHPTQJZWFLYQTZJBDYY",
+    "status": 1,
+    "sort_no": 167
+  },
+  {
+    "diag_code": "B96",
+    "diag_name": "其他特指细菌性病原体作为分类于其他章疾病的原因",
+    "pinyin_initials": "QTTZXJXBYTZWFLYQTZJBDYY",
+    "status": 1,
+    "sort_no": 168
+  },
+  {
+    "diag_code": "B97",
+    "diag_name": "病毒性病原体作为分类于其他章疾病的原因",
+    "pinyin_initials": "BDXBYTZWFLYQTZJBDYY",
+    "status": 1,
+    "sort_no": 169
+  },
+  {
+    "diag_code": "B98",
+    "diag_name": "分类地其他章的作为疾病原因的特指感染病原体",
+    "pinyin_initials": "FLDQTZDZWJBYYDTZGRBYT",
+    "status": 1,
+    "sort_no": 170
+  },
+  {
+    "diag_code": "B99",
+    "diag_name": "其他和未特指的传染病",
+    "pinyin_initials": "QTHWTZDCRB",
+    "status": 1,
+    "sort_no": 171
+  },
+  {
+    "diag_code": "C00",
+    "diag_name": "唇恶性肿瘤",
+    "pinyin_initials": "CEXZL",
+    "status": 1,
+    "sort_no": 172
+  },
+  {
+    "diag_code": "C01",
+    "diag_name": "舌根恶性肿瘤",
+    "pinyin_initials": "SGEXZL",
+    "status": 1,
+    "sort_no": 173
+  },
+  {
+    "diag_code": "C02",
+    "diag_name": "舌其他和未特指部位的恶性肿瘤",
+    "pinyin_initials": "SQTHWTZBWDEXZL",
+    "status": 1,
+    "sort_no": 174
+  },
+  {
+    "diag_code": "C03",
+    "diag_name": "牙龈恶性肿瘤",
+    "pinyin_initials": "YYEXZL",
+    "status": 1,
+    "sort_no": 175
+  },
+  {
+    "diag_code": "C04",
+    "diag_name": "口底恶性肿瘤",
+    "pinyin_initials": "KDEXZL",
+    "status": 1,
+    "sort_no": 176
+  },
+  {
+    "diag_code": "C05",
+    "diag_name": "腭恶性肿瘤",
+    "pinyin_initials": "EEXZL",
+    "status": 1,
+    "sort_no": 177
+  },
+  {
+    "diag_code": "C06",
+    "diag_name": "口其他和未特指部位的恶性肿瘤",
+    "pinyin_initials": "KQTHWTZBWDEXZL",
+    "status": 1,
+    "sort_no": 178
+  },
+  {
+    "diag_code": "C07",
+    "diag_name": "腮腺恶性肿瘤",
+    "pinyin_initials": "SXEXZL",
+    "status": 1,
+    "sort_no": 179
+  },
+  {
+    "diag_code": "C08",
+    "diag_name": "大涎腺其他和未特指的恶性肿瘤",
+    "pinyin_initials": "DXXQTHWTZDEXZL",
+    "status": 1,
+    "sort_no": 180
+  },
+  {
+    "diag_code": "C09",
+    "diag_name": "扁桃体恶性肿瘤",
+    "pinyin_initials": "BTTEXZL",
+    "status": 1,
+    "sort_no": 181
+  },
+  {
+    "diag_code": "C10",
+    "diag_name": "口咽恶性肿瘤",
+    "pinyin_initials": "KYEXZL",
+    "status": 1,
+    "sort_no": 182
+  },
+  {
+    "diag_code": "C11",
+    "diag_name": "鼻咽恶性肿瘤",
+    "pinyin_initials": "BYEXZL",
+    "status": 1,
+    "sort_no": 183
+  },
+  {
+    "diag_code": "C12",
+    "diag_name": "梨状窦恶性肿瘤",
+    "pinyin_initials": "LZDEXZL",
+    "status": 1,
+    "sort_no": 184
+  },
+  {
+    "diag_code": "C13",
+    "diag_name": "咽下部恶性肿瘤",
+    "pinyin_initials": "YXBEXZL",
+    "status": 1,
+    "sort_no": 185
+  },
+  {
+    "diag_code": "C14",
+    "diag_name": "唇、口腔和咽其他和部位不明的恶性肿瘤",
+    "pinyin_initials": "CKQHYQTHBWBMDEXZL",
+    "status": 1,
+    "sort_no": 186
+  },
+  {
+    "diag_code": "C15",
+    "diag_name": "食管恶性肿瘤",
+    "pinyin_initials": "SGEXZL",
+    "status": 1,
+    "sort_no": 187
+  },
+  {
+    "diag_code": "C16",
+    "diag_name": "胃恶性肿瘤",
+    "pinyin_initials": "WEXZL",
+    "status": 1,
+    "sort_no": 188
+  },
+  {
+    "diag_code": "C17",
+    "diag_name": "小肠恶性肿瘤",
+    "pinyin_initials": "XCEXZL",
+    "status": 1,
+    "sort_no": 189
+  },
+  {
+    "diag_code": "C18",
+    "diag_name": "结肠恶性肿瘤",
+    "pinyin_initials": "JCEXZL",
+    "status": 1,
+    "sort_no": 190
+  },
+  {
+    "diag_code": "C19",
+    "diag_name": "直肠乙状结肠连接处恶性肿瘤",
+    "pinyin_initials": "ZCYZJCLJCEXZL",
+    "status": 1,
+    "sort_no": 191
+  },
+  {
+    "diag_code": "C20",
+    "diag_name": "直肠恶性肿瘤",
+    "pinyin_initials": "ZCEXZL",
+    "status": 1,
+    "sort_no": 192
+  },
+  {
+    "diag_code": "C21",
+    "diag_name": "肛门和肛管的恶性肿瘤",
+    "pinyin_initials": "GMHGGDEXZL",
+    "status": 1,
+    "sort_no": 193
+  },
+  {
+    "diag_code": "C22",
+    "diag_name": "肝和肝内胆管恶性肿瘤",
+    "pinyin_initials": "GHGNDGEXZL",
+    "status": 1,
+    "sort_no": 194
+  },
+  {
+    "diag_code": "C23",
+    "diag_name": "胆囊恶性肿瘤",
+    "pinyin_initials": "DNEXZL",
+    "status": 1,
+    "sort_no": 195
+  },
+  {
+    "diag_code": "C24",
+    "diag_name": "胆道其他和未特指部位的恶性肿瘤",
+    "pinyin_initials": "DDQTHWTZBWDEXZL",
+    "status": 1,
+    "sort_no": 196
+  },
+  {
+    "diag_code": "C25",
+    "diag_name": "胰恶性肿瘤",
+    "pinyin_initials": "YEXZL",
+    "status": 1,
+    "sort_no": 197
+  },
+  {
+    "diag_code": "C26",
+    "diag_name": "消化器官其他和不明确的恶性肿瘤",
+    "pinyin_initials": "XHQGQTHBMQDEXZL",
+    "status": 1,
+    "sort_no": 198
+  },
+  {
+    "diag_code": "C30",
+    "diag_name": "鼻腔和中耳恶性肿瘤",
+    "pinyin_initials": "BQHZEEXZL",
+    "status": 1,
+    "sort_no": 199
+  },
+  {
+    "diag_code": "C31",
+    "diag_name": "鼻旁窦恶性肿瘤",
+    "pinyin_initials": "BPDEXZL",
+    "status": 1,
+    "sort_no": 200
+  }
+]

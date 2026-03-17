@@ -175,6 +175,7 @@ DECLARE
         ARRAY['emr_data_element', 'DataElement', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["ADMIN"]', '["ADMIN"]', '["ADMIN"]'],
         ARRAY['emr_data_set', 'DataSet', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["ADMIN"]', '["ADMIN"]', '["ADMIN"]'],
         ARRAY['emr_data_set_element', 'DataSetElement', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["ADMIN"]', '["ADMIN"]', '["ADMIN"]'],
+        ARRAY['emr_icd10_diagnosis', 'Icd10Diagnosis', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["ADMIN"]', '["ADMIN"]', '["ADMIN"]'],
         ARRAY['emr_template', 'EmrTemplate', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["ADMIN"]'],
         ARRAY['emr_record', 'EmrRecord', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["ADMIN"]'],
         -- 新增的数据元值域相关表
