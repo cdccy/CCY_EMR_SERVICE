@@ -175,7 +175,7 @@ CREATE TABLE patient (
     patient_code VARCHAR(64)  NOT NULL UNIQUE, 
     patient_name VARCHAR(64)  NOT NULL,        
     gender_code  VARCHAR(32),                  
-    birthday     DATE,                         
+    birthday     INTEGER,                      
     id_card      VARCHAR(18),                  
     phone        VARCHAR(20),                  
     create_time  TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
@@ -187,7 +187,7 @@ COMMENT ON COLUMN patient.id IS '主键ID';
 COMMENT ON COLUMN patient.patient_code IS '患者唯一编码 (DE02.01.039.00)';
 COMMENT ON COLUMN patient.patient_name IS '患者姓名';
 COMMENT ON COLUMN patient.gender_code IS '性别代码 (DE02.01.040.00)';
-COMMENT ON COLUMN patient.birthday IS '出生日期';
+COMMENT ON COLUMN patient.birthday IS '出生日期(yyyyMMdd)';
 COMMENT ON COLUMN patient.id_card IS '身份证号';
 COMMENT ON COLUMN patient.phone IS '联系电话';
 COMMENT ON COLUMN patient.create_time IS '创建时间';
@@ -200,7 +200,7 @@ CREATE TABLE registration (
     patient_code  VARCHAR(64)  NOT NULL,        
     dept_code     VARCHAR(64)  NOT NULL,        
     doctor_code   VARCHAR(64)  NOT NULL,        
-    reg_date      DATE         NOT NULL,        
+    reg_date      INTEGER      NOT NULL,        
     time_slot     VARCHAR(16),                  
     seq_no        INTEGER,                      
     reg_status    VARCHAR(32)  DEFAULT 'WAITING', 
@@ -216,7 +216,7 @@ COMMENT ON COLUMN registration.reg_code IS '挂号流水号：本次就诊的唯
 COMMENT ON COLUMN registration.patient_code IS '患者编码';
 COMMENT ON COLUMN registration.dept_code IS '挂号科室编码';
 COMMENT ON COLUMN registration.doctor_code IS '挂号医生编码';
-COMMENT ON COLUMN registration.reg_date IS '计划就诊日期';
+COMMENT ON COLUMN registration.reg_date IS '计划就诊日期(yyyyMMdd)';
 COMMENT ON COLUMN registration.time_slot IS '就诊时段：AM/PM';
 COMMENT ON COLUMN registration.seq_no IS '排队号序';
 COMMENT ON COLUMN registration.reg_status IS '挂号状态';

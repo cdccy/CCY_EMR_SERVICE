@@ -40,23 +40,40 @@ public class DemoController extends APIJSONController<Long, JSONObject, JSONArra
         // 注入当前用户身份给 APIJSON
         try {
             Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-            if (auth != null && auth.getPrincipal() instanceof UserDetails) {
-                String username = ((UserDetails) auth.getPrincipal()).getUsername();
-                SysUser user = sysUserService.findByUsername(username);
-                if (user != null) {
-                    parser.setVisitor(
-                        new apijson.orm.Visitor<Long>() {
-                            @Override
-                            public Long getId() {
-                                return user.getId();
-                            }
+            if (auth != null) {
+                String username = null;
+                Object principal = auth.getPrincipal();
+                if (principal instanceof UserDetails) {
+                    username = ((UserDetails) principal).getUsername();
+                } else if (principal instanceof String) {
+                    String name = ((String) principal).trim();
+                    if (!name.isEmpty() && !"anonymousUser".equalsIgnoreCase(name)) {
+                        username = name;
+                    }
+                } else if (auth.getName() != null && !auth.getName().isBlank()) {
+                    String name = auth.getName().trim();
+                    if (!"anonymousUser".equalsIgnoreCase(name)) {
+                        username = name;
+                    }
+                }
 
-                            @Override
-                            public List<Long> getContactIdList() {
-                                return null;
+                if (username != null) {
+                    SysUser user = sysUserService.findByUsername(username);
+                    if (user != null) {
+                        parser.setVisitor(
+                            new apijson.orm.Visitor<Long>() {
+                                @Override
+                                public Long getId() {
+                                    return user.getId();
+                                }
+
+                                @Override
+                                public List<Long> getContactIdList() {
+                                    return null;
+                                }
                             }
-                        }
-                    );
+                        );
+                    }
                 }
             } else {
                 // 如果没有认证信息，设置为 UNKNOWN 角色 (visitorId = null)

@@ -2265,7 +2265,7 @@ CREATE TABLE public.patient (
     patient_code character varying(64) NOT NULL,
     patient_name character varying(64) NOT NULL,
     gender_code character varying(32),
-    birthday date,
+    birthday integer,
     id_card character varying(18),
     phone character varying(20),
     create_time timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
@@ -2314,7 +2314,7 @@ COMMENT ON COLUMN public.patient.gender_code IS '性别代码 (DE02.01.040.00)';
 -- Name: COLUMN patient.birthday; Type: COMMENT; Schema: public; Owner: emr_user
 --
 
-COMMENT ON COLUMN public.patient.birthday IS '出生日期';
+COMMENT ON COLUMN public.patient.birthday IS '出生日期(yyyyMMdd)';
 
 
 --
@@ -2376,7 +2376,7 @@ CREATE TABLE public.registration (
     patient_code character varying(64) NOT NULL,
     dept_code character varying(64) NOT NULL,
     doctor_code character varying(64) NOT NULL,
-    reg_date date NOT NULL,
+    reg_date integer NOT NULL,
     time_slot character varying(16),
     seq_no integer,
     reg_status character varying(32) DEFAULT 'WAITING'::character varying,
@@ -2433,7 +2433,7 @@ COMMENT ON COLUMN public.registration.doctor_code IS '挂号医生编码';
 -- Name: COLUMN registration.reg_date; Type: COMMENT; Schema: public; Owner: emr_user
 --
 
-COMMENT ON COLUMN public.registration.reg_date IS '计划就诊日期';
+COMMENT ON COLUMN public.registration.reg_date IS '计划就诊日期(yyyyMMdd)';
 
 
 --
