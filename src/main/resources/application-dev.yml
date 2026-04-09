@@ -3,7 +3,7 @@ spring:
   # 数据源配置 - PostgreSQL
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/emr_db?currentSchema=public
+    url: jdbc:postgresql://39.106.26.4:5432/emr_db?currentSchema=public
     username: emr_user
     password: emr_password
     hikari:
@@ -16,7 +16,7 @@ spring:
   # Redis 配置
   data:
     redis:
-      host: localhost
+      host: 39.106.26.4
       port: 6379
       database: 0
       timeout: 10000ms

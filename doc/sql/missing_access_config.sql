@@ -63,6 +63,7 @@ VALUES
     ('emr_data_element', 'DataElement', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["ADMIN"]', '["ADMIN"]', '["ADMIN"]'),
     ('emr_data_set', 'DataSet', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["ADMIN"]', '["ADMIN"]', '["ADMIN"]'),
     ('emr_data_set_element', 'DataSetElement', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["ADMIN"]', '["ADMIN"]', '["ADMIN"]'),
+    ('emr_drug_dictionary', 'DrugDictionary', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["UNKNOWN","LOGIN","ADMIN"]', '["ADMIN"]', '["ADMIN"]', '["ADMIN"]'),
     
     -- 电子病历管理系统
     ('emr_template', 'EmrTemplate', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["LOGIN","ADMIN"]', '["ADMIN"]'),
@@ -108,6 +109,7 @@ WHERE name IN (
     'Function', 'Script', 'Request', 'Document',
     'patient', 'registration', 'outpatient_visit', 'outpatient_visit_active', 'outpatient_visit_history', 'sys_department', 'doctor',
     'emr_data_element', 'emr_data_set', 'emr_data_set_element',
+    'emr_drug_dictionary',
     'emr_template', 'emr_record',
     'emr_value_domain', 'emr_value_domain_item',
     'outpatient_encounter_data',

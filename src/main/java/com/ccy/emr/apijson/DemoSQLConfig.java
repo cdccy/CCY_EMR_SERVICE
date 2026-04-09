@@ -23,14 +23,14 @@ public class DemoSQLConfig extends APIJSONSQLConfig<Long, JSONObject, JSONArray>
 
     @Override
     public String gainDBVersion() {
-        return "16.0"; // PostgreSQL 版本
+        return "14.0"; // PostgreSQL 版本
     }
 
     @JSONField(serialize = false)
     @Override
     public String gainDBUri() {
         // 从配置文件中读取，或者硬编码 (MVP简化，建议后续从 application.yml 读取)
-        return "jdbc:postgresql://localhost:5432/emr_db?currentSchema=public";
+        return "jdbc:postgresql://39.106.26.4:5432/emr_db?currentSchema=public";
     }
 
     @JSONField(serialize = false)
