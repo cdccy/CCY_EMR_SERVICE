@@ -139,3 +139,7 @@ mvn spring-boot:run
 访问 APIJSON 测试页面:
 - http://localhost:8080/api/get
 - http://apijson.cn/api?type=JSON&url=http://localhost:8080/api/get
+
+## 门诊闭环说明文档
+
+- 医嘱/病历/就诊三条流转总览（含关键触发器）：`doc/log/门诊医生站_医嘱病历就诊流转说明_20260410.md`

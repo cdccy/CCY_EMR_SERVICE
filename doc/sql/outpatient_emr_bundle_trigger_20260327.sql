@@ -178,6 +178,51 @@ BEGIN
     v_now
   );
 
+  -- 4.4.1 签署时同步写 emr_record_history，确保归档拿到本次最新版本正文
+  IF v_sign_action THEN
+    INSERT INTO public.emr_record_history (
+      emr_code,
+      visit_code,
+      patient_code,
+      doctor_code,
+      template_code,
+      emr_type,
+      version_no,
+      emr_content,
+      encounter_json,
+      signed_flag,
+      signed_at,
+      emr_status,
+      create_time,
+      update_time,
+      archived_at
+    )
+    SELECT
+      er.emr_code,
+      er.visit_code,
+      er.patient_code,
+      er.doctor_code,
+      er.template_code,
+      er.emr_type,
+      v_next_version,
+      COALESCE(NEW.emr_content, '{}'::jsonb),
+      COALESCE(NEW.encounter_json, '{}'::jsonb),
+      true,
+      v_now,
+      'SIGNED',
+      er.create_time,
+      v_now,
+      v_now
+    FROM public.emr_record er
+    WHERE er.emr_code = v_emr_code
+    ON CONFLICT (emr_code, version_no) DO UPDATE SET
+      emr_content = EXCLUDED.emr_content,
+      encounter_json = EXCLUDED.encounter_json,
+      signed_at = EXCLUDED.signed_at,
+      archived_at = EXCLUDED.archived_at,
+      update_time = EXCLUDED.update_time;
+  END IF;
+
   -- 4.5 签署时，删除同 emr_code 历史未签署版本，仅保留最新签署版本
   IF v_sign_action THEN
     PERFORM set_config('app.allow_version_purge', 'on', true);

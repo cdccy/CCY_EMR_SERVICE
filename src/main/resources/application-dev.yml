@@ -29,9 +29,9 @@ spring:
 
 # MinIO 配置
 minio:
-  endpoint: http://localhost:9000
+  endpoint: http://39.106.26.4:9999
   access-key: minioadmin
-  secret-key: minioadmin123
+  secret-key: minioadmin
   bucket-name: emr-files
 
 # JWT 配置
