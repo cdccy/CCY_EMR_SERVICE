@@ -55,3 +55,17 @@ springdoc:
     path: /swagger-ui.html
     tags-sorter: alpha
     operations-sorter: alpha
+
+app:
+  ws:
+    max-text-message-buffer-size: 10485760
+    max-binary-message-buffer-size: 10485760
+  chat:
+    memory-window: 40
+  llm:
+    enabled: true
+    api-key: ${OPENAI_API_KEY:e8575d1c-3306-4760-9a07-f91f88bfb67d}
+    base-url: ${OPENAI_BASE_URL:https://ark.cn-beijing.volces.com/api/v3}
+    model: ${OPENAI_MODEL:deepseek-v3-250324}
+    temperature: ${OPENAI_TEMPERATURE:0.7}
+    timeout-seconds: ${OPENAI_TIMEOUT:60}

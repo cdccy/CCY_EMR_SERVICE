@@ -52,6 +52,8 @@ public class SecurityConfig {
                         // 健康检查
                         "/actuator/**",
                         "/health",
+                        // AI 助手一期（临时白名单）
+                        "/ai/**",
                         // 静态资源
                         "/favicon.ico",
                         "/error"
