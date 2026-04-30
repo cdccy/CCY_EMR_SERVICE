@@ -42,4 +42,25 @@ public class MedicalFrontendTools implements MedicalToolProvider {
             return "{\"error\":\"" + e.getMessage().replace("\"", "'") + "\"}";
         }
     }
+
+    @Tool(name = "get_current_emr_xml", value = "获取当前病历模板XML结构（DCWriter当前文档）")
+    public String getCurrentEmrXml() {
+        FrontendToolInvoker invoker = invokerHolder.currentInvoker().orElse(null);
+        if (invoker == null) {
+            return "{}";
+        }
+        try {
+            String actionId = invokerHolder.currentToolCall()
+                    .map(FrontendToolInvokerHolder.ToolCallContext::toolId)
+                    .filter(id -> !id.isBlank())
+                    .orElse(UUID.randomUUID().toString());
+            Map<String, Object> payload = new LinkedHashMap<>();
+            payload.put("need", "current_emr_xml");
+            Map<String, Object> result = invoker.invoke(actionId, "get_current_emr_xml", payload, 20_000L);
+            Object output = result.getOrDefault("output", result);
+            return objectMapper.writeValueAsString(output);
+        } catch (Exception e) {
+            return "{\"error\":\"" + e.getMessage().replace("\"", "'") + "\"}";
+        }
+    }
 }
